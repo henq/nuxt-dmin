@@ -1,0 +1,19 @@
+{
+  "name": "manage",
+  "version": "1.0.0",
+  "description": "this is a manage project!",
+  "author": "henq",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt -s",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
