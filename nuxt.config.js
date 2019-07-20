@@ -1,6 +1,7 @@
 
 export default {
   mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -23,11 +24,13 @@ export default {
   ** Global CSS
   */
   css: [
+    'iview/dist/styles/iview.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/iview'
   ],
   /*
   ** Nuxt.js modules

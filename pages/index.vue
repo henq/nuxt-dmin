@@ -9,6 +9,7 @@
         this is a manage project!
       </h2>
       <div class="links">
+        <Button type="primary"> Iview</Button>
         <a
           href="https://nuxtjs.org/"
           target="_blank"
