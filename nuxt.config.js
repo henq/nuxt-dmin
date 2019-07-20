@@ -1,7 +1,7 @@
 
 export default {
   mode: 'universal',
-  mode: 'spa',
+  // mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -25,6 +25,7 @@ export default {
   */
   css: [
     'iview/dist/styles/iview.css'
+    // '~iview/src/styles/index.less'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -44,6 +45,11 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    loaders:{
+      less:{
+        javascriptEnabled: true
+      }
+    },
     extend(config, ctx) {
     }
   }
