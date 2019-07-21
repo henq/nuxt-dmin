@@ -51,6 +51,15 @@ export default {
       }
     },
     extend(config, ctx) {
+      // config.resolve.alias["_c"]=path.resolve('components')
+      // console.log('webpack config:', config)
+      // console.log("ct22xvvvv",ctx)
+      // if (ctx.isClient) {
+      //   // 添加 alias 配置
+      //   Object.assign(config.resolve.alias, {
+      //     '_c': 'components'
+      //   })
+      // }
     }
   }
 }
