@@ -1,7 +1,3 @@
-<style lang="less">
-  @import './login.less';
-</style>
-
 <template>
   <div class="login">
     <div class="login-con">
@@ -29,13 +25,15 @@ export default {
     //   'getUserInfo'
     // ]),
     handleSubmit ({ userName, password }) {
-      this.handleLogin({ userName, password }).then(res => {
-        this.getUserInfo().then(res => {
-          this.$router.push({
-            name: this.$config.homeName
-          })
-        })
-      })
+      // this.handleLogin({ userName, password }).then(res => {
+      //   this.getUserInfo().then(res => {
+      //     this.$router.push({
+      //       name: this.$config.homeName
+      //     })
+      //   })
+      // })
+      this.$Message.success("登陆成功！");
+      this.$router.push("/")
     }
   }
 }
