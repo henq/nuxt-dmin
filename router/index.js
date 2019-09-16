@@ -7,7 +7,7 @@ import { setToken, getToken, canTurnTo } from '@/libs/util'
 import config from '@/config'
 const { homeName } = config
 
-Vue.use(Router)
+// Vue.use(Router)
 const router = new Router({
   routes,
   mode: 'history'
@@ -20,6 +20,7 @@ const turnTo = (to, access, next) => {
 }
 
 router.beforeEach((to, from, next) => {
+  console.warn("这是一次巧转！")
   iView.LoadingBar.start()
   const token = getToken()
   if (!token && to.name !== LOGIN_PAGE_NAME) {

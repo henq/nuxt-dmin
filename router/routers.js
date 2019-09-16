@@ -11,18 +11,93 @@ import Main from '@/components/main'
  *  hideInMenu: (false) 设为true后在左侧菜单不会显示该页面选项
  *  notCache: (false) 设为true后页面不会缓存
  *  access: (null) 可访问该页面的权限数组，当前路由设置的权限会影响子路由
- *  icon: (-) 该页面在左侧菜单、面包屑和标签导航处显示的图标，如果是自定义图标，需要在图标名称前加下划线'_'
+ *  icon: (-) 该页面在左侧菜单、面包屑和标签导航处显示的图标，如果是自定义图标，需要在图标名称前加下划线'-'
  *  beforeCloseName: (-) 设置该字段，则在关闭当前tab页时会去'@/router/before-close.js'里寻找该字段名对应的方法，作为关闭前的钩子函数
  * }
  */
-
+import parentView from '@/components/parent-view'
 export default [
   {
-    path: '/login',
-    name: 'login',
+    path: '/system/log',
+    name: 'system-log',
     meta: {
-      title: 'Login - 登录',
-      hideInMenu: true
+      title: "日志",
+      icon:'md-home'
+      // hideInMenu: true
     }
-  } 
+  }, {
+    path: '',
+    name: 'doc',
+    meta: {
+      title: '文档',
+      href: 'https://lison16.github.io/iview-admin-doc/#/',
+      icon: 'ios-book'
+    }
+  },
+  {
+    path: '/',
+    name: '_home',
+    redirect: '/home',
+    component: Main,
+    meta: {
+      hideInMenu: true,
+      notCache: true
+    },
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        meta: {
+          hideInMenu: true,
+          title: '首页',
+          notCache: true,
+          icon: 'md-home'
+        }
+      }
+    ]
+  },
+  {
+    path: '/system',
+    name: 'system',
+    meta: {
+      title: '系统管理',
+      icon: 'md-menu',
+      showAlways: true
+    }
+    , children: [
+      {
+        path: '/system/user',
+        name: 'system-user',
+        meta: {
+          title: '用户管理',
+          icon: 'md-menu'
+        },
+        showAlways: true
+      },
+      {
+        path: '/system/role',
+        name: 'system-role',
+        meta: {
+          title: '角色管理',
+          icon: 'md-menu'
+        }
+      },
+      {
+        path: '/system/department',
+        name: 'system-department',
+        meta: {
+          title: '部门管理',
+          icon: 'md-menu'
+        }
+      },
+      {
+        path: '/system/menu',
+        name: 'system-menu',
+        meta: {
+          title: '菜单管理',
+          icon: 'md-menu'
+        }
+      }
+    ]
+  }
 ]

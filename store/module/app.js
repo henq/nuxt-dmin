@@ -42,7 +42,7 @@ export default {
   mutations: {
     setBreadCrumb (state, route) {
       console.warn(state,route);
-      // state.breadCrumbList = getBreadCrumbList(route, state.homeRoute)
+      state.breadCrumbList = getBreadCrumbList(route, state.homeRoute)
     },
     setTagNavList (state, list) {
       let tagList = []
@@ -59,6 +59,7 @@ export default {
       setTagNavListInLocalstorage([...tagList])
     },
     closeTag (state, route) {
+      debugger;
       let tag = state.tagNavList.filter(item => routeEqual(item, route))
       route = tag[0] ? tag[0] : null
       if (!route) return
