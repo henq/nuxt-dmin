@@ -197,7 +197,7 @@ export default {
       this.setTagNavList(getNewTagList(this.tagNavList, newRoute));
       this.$refs.sideMenu.updateOpenName(newRoute.name);
 
-      debugger;
+      // debugger;
     }
   },
   mounted() {
