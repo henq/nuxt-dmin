@@ -128,7 +128,6 @@ export default {
     ...mapMutations(["setBreadCrumb", "setTagNavList", "addTag", "setLocal"]),
     ...mapActions(["handleLogin"]),
     turnToPage(route) {
-      debugger;
       let { name, params, query } = {};
       if (typeof route === "string") name = route;
       else {
