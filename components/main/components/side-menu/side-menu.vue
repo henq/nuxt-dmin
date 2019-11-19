@@ -100,9 +100,9 @@ export default {
       this.openedNames = newNames
     },
     openedNames () {
-      this.$nextTick(() => {
-        this.$refs.menu.updateOpened()
-      })
+      // this.$nextTick(() => {
+      //   this.$refs.menu.updateOpened()
+      // })
     }
   },
   mounted () {
